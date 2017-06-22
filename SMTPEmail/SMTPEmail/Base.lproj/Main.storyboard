@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="SMTPEmail" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bD-BS-eWU">
+                                <rect key="frame" x="50" y="205" width="275" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2G-Gx-jkL">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dw-7Y-0FG"/>
+                                        </connections>
+                                    </button>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKx-YY-Gag">
+                                        <rect key="frame" x="17" y="0.0" width="240" height="44"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gmail_icon" translatesAutoresizingMaskIntoConstraints="NO" id="6WO-hv-N4d">
+                                                <rect key="frame" x="0.0" y="11" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="WFb-Zu-N3m"/>
+                                                    <constraint firstAttribute="width" constant="22" id="gkf-tO-jj1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with Gmail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G82-OX-daF">
+                                                <rect key="frame" x="42" y="11" width="158" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="6FS-HD-sJz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="G82-OX-daF" firstAttribute="leading" secondItem="6WO-hv-N4d" secondAttribute="trailing" constant="20" id="0DE-PI-6cl"/>
+                                            <constraint firstItem="6WO-hv-N4d" firstAttribute="centerY" secondItem="kKx-YY-Gag" secondAttribute="centerY" id="PJi-52-L8m"/>
+                                            <constraint firstAttribute="trailing" secondItem="G82-OX-daF" secondAttribute="trailing" constant="40" id="PlY-O5-Uep"/>
+                                            <constraint firstItem="G82-OX-daF" firstAttribute="centerY" secondItem="kKx-YY-Gag" secondAttribute="centerY" id="QmQ-8v-m2L"/>
+                                            <constraint firstAttribute="width" constant="240" id="k43-jG-Ld1"/>
+                                            <constraint firstItem="6WO-hv-N4d" firstAttribute="leading" secondItem="kKx-YY-Gag" secondAttribute="leading" id="wfO-Gy-aXL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kKx-YY-Gag" firstAttribute="top" secondItem="3bD-BS-eWU" secondAttribute="top" id="27h-ag-517"/>
+                                    <constraint firstAttribute="bottom" secondItem="t2G-Gx-jkL" secondAttribute="bottom" id="66N-Ld-vfV"/>
+                                    <constraint firstItem="kKx-YY-Gag" firstAttribute="centerX" secondItem="3bD-BS-eWU" secondAttribute="centerX" id="6eu-q9-6Uk"/>
+                                    <constraint firstItem="t2G-Gx-jkL" firstAttribute="leading" secondItem="3bD-BS-eWU" secondAttribute="leading" id="GB0-qk-9G4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="UbN-FX-siP"/>
+                                    <constraint firstAttribute="width" constant="275" id="f5f-XQ-NGE"/>
+                                    <constraint firstAttribute="height" constant="44" id="fJR-2W-YYv"/>
+                                    <constraint firstItem="t2G-Gx-jkL" firstAttribute="top" secondItem="3bD-BS-eWU" secondAttribute="top" id="hkZ-4S-F8T"/>
+                                    <constraint firstAttribute="trailing" secondItem="t2G-Gx-jkL" secondAttribute="trailing" id="q3d-G6-TQd"/>
+                                    <constraint firstAttribute="bottom" secondItem="kKx-YY-Gag" secondAttribute="bottom" id="z3K-Tg-Ret"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eU-Gs-5Tr">
+                                <rect key="frame" x="87" y="299" width="200" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dmG-y8-WRy"/>
+                                    <constraint firstAttribute="width" constant="200" id="ggb-Dd-30Z"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="-70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="125" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Send Email" image="android-send">
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.10980392160000001" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendEmailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Gz-bn-q3T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1eU-Gs-5Tr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2HC-RX-4FZ"/>
+                            <constraint firstItem="1eU-Gs-5Tr" firstAttribute="top" secondItem="3bD-BS-eWU" secondAttribute="bottom" constant="50" id="Sml-AK-Kwy"/>
+                            <constraint firstItem="3bD-BS-eWU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSx-R2-Epc"/>
+                            <constraint firstItem="3bD-BS-eWU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="185" id="siR-df-wUt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sendEmailButton" destination="1eU-Gs-5Tr" id="aJr-cm-GbX"/>
+                        <outlet property="signInButton" destination="t2G-Gx-jkL" id="xZd-n2-6PA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="android-send" width="25" height="25"/>
+        <image name="gmail_icon" width="128" height="128"/>
+    </resources>
+</document>
