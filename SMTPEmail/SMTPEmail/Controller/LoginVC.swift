@@ -41,10 +41,7 @@ class LoginVC: UIViewController , GIDSignInUIDelegate, GIDSignInDelegate {
         if UserDefaults.standard.value(forKey: "authToken") != nil {
             self.sendEmail()
         } else {
-            let alert = UIAlertController(title: "Error", message: "Please sign in first", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .destructive) { action in
-            })
-            self.present(alert, animated: true, completion: nil)
+            self.alert(message: "Please sign in first")
         }
     }
     
@@ -66,40 +63,18 @@ class LoginVC: UIViewController , GIDSignInUIDelegate, GIDSignInDelegate {
      * Purpose: To send mail
      *======================================================*/
     func sendEmail() {
-        let token = UserDefaults.standard.value(forKey: "authToken") as? String ?? ""
-        let name = UserDefaults.standard.value(forKey: "name") as? String ?? ""
-        let email = UserDefaults.standard.value(forKey: "email") as? String ?? ""
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        let smtpSession = MCOSMTPSession()
-        smtpSession.hostname = "smtp.gmail.com"
-        smtpSession.username = email
-        smtpSession.password = nil
-        smtpSession.oAuth2Token = token
-        smtpSession.port = 465
-        smtpSession.authType = MCOAuthType.xoAuth2
-        smtpSession.connectionType = MCOConnectionType.TLS
-        smtpSession.connectionLogger = {(connectionID, type, data) in
-            if data != nil {
-                if let string = NSString(data: data!, encoding: String.Encoding.utf8.rawValue){
-                    NSLog("Connectionlogger: \(string)")
-                }
-            }
-        }
-        let builder = MCOMessageBuilder()
-        builder.header.to = [MCOAddress(displayName: name, mailbox: "jigneshbodarya@gmail.com")]
-        builder.header.from = MCOAddress(displayName: name, mailbox: email)
-        builder.header.subject = "Hello from WithalSolution"
-        builder.htmlBody = "Hello, this is jignesh's mail for being useful"
         
-        let rfc822Data = builder.data()
-        let sendOperation = smtpSession.sendOperation(with: rfc822Data)
-        sendOperation?.start { (error) -> Void in
+        let email = UserDefaults.standard.value(forKey: "email") as? String ?? ""
+        let to = "jigneshbodarya@gmail.com"
+        let subject = "Hello from WithalSolution"
+        let body = "Hello, this is jignesh's mail for being useful"
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        EmailManager.shared.sendMail(to: to, from: email, subject: subject, body: body) { (isSuccess, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
-            if (error != nil) {
-                NSLog("Error sending email: \(String(describing: error))")
-            } else {
+            if isSuccess {
                 self.view.makeToast("Successfully sent email!")
-                NSLog("Successfully sent email!")
+            } else {
+                self.view.makeToast((error?.localizedDescription)!)
             }
         }
     }
@@ -129,10 +104,7 @@ class LoginVC: UIViewController , GIDSignInUIDelegate, GIDSignInDelegate {
             self.signInButton.superview?.isHidden = true
             self.sendEmailButton.isHidden = false
         } else {
-            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .destructive) { action in
-            })
-            self.present(alert, animated: true, completion: nil)
+            self.alert(message: error.localizedDescription)
         }
     }
     
@@ -140,4 +112,10 @@ class LoginVC: UIViewController , GIDSignInUIDelegate, GIDSignInDelegate {
               withError error: Error!) {
     }
     
+    func alert(message:String) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .destructive) { action in
+        })
+        self.present(alert, animated: true, completion: nil)
+    }
 }

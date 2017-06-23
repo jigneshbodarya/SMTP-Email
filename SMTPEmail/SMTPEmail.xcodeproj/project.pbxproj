@@ -14,6 +14,7 @@
 		845215191EFC1D89000ADF22 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845215181EFC1D89000ADF22 /* Toast.swift */; };
 		8452151F1EFC2221000ADF22 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452151E1EFC2221000ADF22 /* LoginVC.swift */; };
 		845215211EFC28D4000ADF22 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845215201EFC28D4000ADF22 /* GoogleService-Info.plist */; };
+		845E961F1EFD808300C0B886 /* EmailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E961E1EFD808300C0B886 /* EmailManager.swift */; };
 		8DFA2D1B01C2ACF0FAA5EAF7 /* Pods_SMTPEmail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FBE73527276DF7C13B263E /* Pods_SMTPEmail.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		8452151A1EFC1DEB000ADF22 /* SMTPEmail-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMTPEmail-Bridging-Header.h"; sourceTree = "<group>"; };
 		8452151E1EFC2221000ADF22 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		845215201EFC28D4000ADF22 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		845E961E1EFD808300C0B886 /* EmailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				8452151E1EFC2221000ADF22 /* LoginVC.swift */,
+				845E961E1EFD808300C0B886 /* EmailManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845E961F1EFD808300C0B886 /* EmailManager.swift in Sources */,
 				845215191EFC1D89000ADF22 /* Toast.swift in Sources */,
 				8452151F1EFC2221000ADF22 /* LoginVC.swift in Sources */,
 				845215031EFC189A000ADF22 /* AppDelegate.swift in Sources */,
